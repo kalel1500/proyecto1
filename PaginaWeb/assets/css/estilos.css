@@ -81,3 +81,6 @@ h1.cabecera {
 option.opHidden {
 	display: none;
 }
+div.desabilitado {
+    opacity: 0.5;
+}

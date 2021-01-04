@@ -9,58 +9,61 @@
 		<link rel="icon" type="image/png" href="assets/images/recursos.jpg"/>
 		<script type="text/javascript" src="assets/js/validarFormularios.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/css/estilos.css">
-		<?php include "php/conexion.proc.php"; ?>
-		<?php include "php/datosUsuario.proc.php"; ?>
-		<?php include "php/titleHead.proc.php"; ?>
+		<?php include "assets/php/conexion.proc.php"; ?>
+		<?php include "assets/php/datosUsuario.proc.php"; ?>
+		<?php include "assets/php/titleHead.proc.php"; ?>
 	</head>
 	<body>
-		<header>
-			<div class="cabecera">
-				<img class="imgCabecera" src="assets/images/cabecera2.jpg">
-			</div>
-			<div class="centrarTitulo">
-				<?php include "php/tituloCabezera.proc.php"; ?>
-			</div>
-		</header>
-
 		<?php
-			include "php/navegador.php";
 			if (!isset($_SESSION['user_id'])) {
-				include "php/login.php";
+				include "assets/php/login.php";
 			} else {
-				?><section><?php
-					if (!isset($_REQUEST['mostrar'])) {
-						include "php/recursos.php";
-						?><!-- <a href="index.php?mostrar=incidencias"><input class="añadir-lista" type="button" value="incidencias"></a> --><?php
-					} else {
-						$mostrar = $_REQUEST['mostrar'];
-						switch ($mostrar) {
-							case 'recursos':
-								include "php/recursos.php";
-								break;
-							case 'reservas':
-								include "php/reservas.php";
-								break;
-							case 'incidencias':
-								include "php/incidencias.php";
-								break;
-							case 'formularioValidacion':
-								include "php/formularioValidacion.php";
-								break;
-							case 'cerrarSesion':
-								include "php/login.php";
-								break;
-							default:
-								echo "Error";
-								break;
-						}
-					}
-				?></section><?php
+				?>
+					<header>
+						<div class="cabecera">
+							<img class="imgCabecera" src="assets/images/cabecera2.jpg">
+						</div>
+						<div class="centrarTitulo">
+							<?php include "assets/php/tituloCabezera.proc.php"; ?>
+						</div>
+					</header>
+					<?php include "assets/php/navegador.php"; ?>
+					<section>
+						<?php
+							if (!isset($_REQUEST['mostrar'])) {
+								include "assets/php/recursos.php";
+							} else {
+								$mostrar = $_REQUEST['mostrar'];
+								switch ($mostrar) {
+									case 'recursos':
+										include "assets/php/recursos.php";
+										break;
+									case 'reservas':
+										include "assets/php/reservas.php";
+										break;
+									case 'incidencias':
+										include "assets/php/incidencias.php";
+										break;
+									case 'gestionUsuarios':
+										include "assets/php/gestionUsuarios.php";
+										break;
+									case 'cerrarSesion':
+										include "assets/php/login.php";
+										break;
+									default:
+										echo "Error";
+										break;
+								}
+							}
+						?>
+					</section>
+
+					<footer>
+						<p>Recursos</p>
+						<p class="footer">Adrian Canals</p>
+					</footer>
+				<?php
 			}
 		?>
-		<footer>
-			<p>Recursos</p>
-			<p class="footer">Adrian Canals</p> | <p class="footer">Daniel Alvarez</p>
-		</footer>
 	</body>
 </html>
