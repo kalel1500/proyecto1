@@ -1,0 +1,57 @@
+div.tabla {
+	display: table;
+	/*border: 1px solid black;*/
+	margin: auto;
+	padding: 10px;
+	width: 100%;
+	/*text-align: center;*/
+	/*background-color: #2d2d2d;*/
+	/*color: white;*/
+}
+div.fila {
+	display: table-row;
+	/*border: 1px solid black;*/
+}
+div.columna {
+	display: table-cell;
+	/*border: 1px solid black;*/
+}
+div.encabezado {
+	font-weight: bold;
+}
+/*----------------------------------------------*/
+div.tabla.tablaRecursos {
+	text-align: center;
+}
+div.fila.filaRecursos {
+	display: inline-grid;
+	width: 160px;
+    margin-bottom: 10px;
+    padding: 7px;
+    width: 30%;
+    margin: 10px;
+    height: 300px;
+    vertical-align: middle;
+}
+div.columna.columnaRecursos {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: center;
+}
+div.columna.noRecursos {
+	border: 1px solid black;
+    background: #f9f9f9;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*----------------------------------------------*/
+div.fila.filaRecursos.colorDisponible {
+    background-color: #aee8a2;
+}
+div.fila.filaRecursos.colorOcupado {
+    background-color: #ff9c9c;
+}
